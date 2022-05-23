@@ -3,15 +3,17 @@
 # interrutps for multiple controllers for the same "line"
 # for the external interrupts.
 
+config ZMK_BLE
+	default y
 
-if SHIELD_KIWI
+config ZMK_USB
+	default y
+
+
+if SHIELD_KIWI_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "kiwi"
-
-endif
-
-if SHIELD_KIWI_LEFT
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
