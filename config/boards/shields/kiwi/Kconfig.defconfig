@@ -1,0 +1,26 @@
+# Unable to use interrupts as the same pin number is used
+# across A & B controllers, and STM32F303CCT6 can't enable
+# interrutps for multiple controllers for the same "line"
+# for the external interrupts.
+
+
+if SHIELD_KIWI
+
+config ZMK_KEYBOARD_NAME
+    default "kiwi"
+
+endif
+
+if SHIELD_KIWI_LEFT
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_KIWI_LEFT || SHIELD_KIWI_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
