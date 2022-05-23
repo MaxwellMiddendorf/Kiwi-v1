@@ -1,0 +1,12 @@
+manifest:
+  remotes:
+    - name: MaxwellMiddendorf
+      url-base: https://github.com/MaxwellMiddendorf
+  projects:
+    - name: zmk
+      remote: MaxwellMiddendorf
+      revision: Master
+      import: app/west.yml
+  self:
+    path: config
+
