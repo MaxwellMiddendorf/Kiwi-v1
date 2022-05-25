@@ -1,14 +1,3 @@
-# Unable to use interrupts as the same pin number is used
-# across A & B controllers, and STM32F303CCT6 can't enable
-# interrutps for multiple controllers for the same "line"
-# for the external interrupts.
-
-config ZMK_BLE
-	default y
-
-config ZMK_USB
-	default y
-
 
 if SHIELD_KIWI_LEFT
 
