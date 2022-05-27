@@ -23,6 +23,7 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+		
     };
         keymap {
                 compatible = "zmk,keymap";			
@@ -37,8 +38,8 @@
                         bindings = <
 			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
 			&kp A 					&kp R					&kp S 					&kp T 					&kp D   										&kp H						&kp N					&kp E      				&kp I   				&kp O
-			&kp Z					&kp X					&kp C 					&kp V					&kp TAB   										&kp B						&kp K					&kp M 	   				&ht COMMA APOS			&ht DOT QUESTION
-															&mo 1					&ht 2 SPACE				&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
+			&kp Z					&kp X					&kp C 					&kp V					&kp TAB   										&kp B						&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
+															&mo 1					&mt 2 SPACE				&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
                         >;
 					};
 				
@@ -51,9 +52,9 @@
 //													|	    	NumPadSym	|     		Space Extend|			Shift   										Ctrl		  |     		GUI			|     		Alt  		|
 
                         bindings = <
-			&ht STAR F12			&ht 9 F9				&ht 8 F8				&ht 7 F7				&kp PLUS										&kp EXCLAMATION				&kp AT  				&kp HASH   				&kp DOLLAR				&kp SEMI   	
-			&ht 0 F11				&ht 8 F6				&ht 5 F5				&ht 4 F5				&kp DOT 										&ht LBKT RBKT				&ht LPAR RPAR			&ht LBRC RBRC  			&ht LT GT				&ht DQT PIPE 
-			&ht BACKSLASH F12		&ht 7 F3				&ht 2 F2 				&ht 1 F1				&ht MINUS TILDE									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht CARET GRAVE
+			&ht F12 STAR 			&ht F9 9				&ht F8 8				&ht F7 7				&kp PLUS										&kp EXCLAMATION				&kp AT  				&kp HASH   				&kp DOLLAR				&kp SEMI   	
+			&ht F11 0 				&ht F6 8				&ht F5 5				&ht F5 4				&kp DOT 										&ht LBKT RBKT				&ht LPAR RPAR			&ht LBRC RBRC  			&ht LT GT				&ht DQT PIPE 
+			&ht F12 BACKSLASH		&ht F3 7				&ht F2 2 				&ht F1 1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht CARET GRAVE
 															&trans					&trans 					&trans   										&trans 						&trans					&trans
                         >;
 					};
