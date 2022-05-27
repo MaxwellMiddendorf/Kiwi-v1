@@ -11,12 +11,13 @@
 #define DEFAULT 	0
 #define NUMPADSYM   1
 #define EXTEND   	2
+#define FUNCTION	3
 
 / {
     behaviors {
-        ht: balanced_homerow_mods {
+        ht: balance_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "BALANCE_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
@@ -24,11 +25,20 @@
             bindings = <&kp>, <&kp>;
         };
 		
+		hl: balanced_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCE_TAP_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&mo>;
+        };
     };
         keymap {
                 compatible = "zmk,keymap";			
-				
-                default_layer {
+                default_layer
+				{
 //  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //      		Q  			|			W		    |	  		F	     	|	 		P		  	|		    G	  						    				J		  	  |			  	L 		    |		  	U  	  		|		    Y			|  	   		; 
 //   			A  	  		|   		R     		|	  		S   	  	| 			T  			|    		D	  											H  	  		  |  			N     		|  			E  	  		|		    I 			|  	   		O 
@@ -38,8 +48,8 @@
                         bindings = <
 			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
 			&kp A 					&kp R					&kp S 					&kp T 					&kp D   										&kp H						&kp N					&kp E      				&kp I   				&kp O
-			&kp Z					&kp X					&kp C 					&kp V					&kp SPACE  										&kp B						&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
-															&mo 1					&mo 2					&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
+			&kp Z					&kp X					&kp C 					&kp V					&none   										&kp B						&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
+															&mo 1					&mo 2					&kp LCTRL    									&kp LSHIFT 					&hl LGUI SPACE			&kp LALT
                         >;
 					};
 				
@@ -53,25 +63,41 @@
 
                         bindings = <
 			&kp STAR 			&kp N9				&kp N8				&kp N7				&kp PLUS										&kp EXCLAMATION				&kp AT  				&kp HASH   				&kp DOLLAR				&kp SEMI   	
-			&kp N0 				&kp N8				&kp N5				&kp N4				&kp DOT 										&ht LBKT RBKT				&ht LPAR RPAR			&ht LBRC RBRC  			&ht LT GT				&ht DQT PIPE 
-			&kp BACKSLASH		&kp N7				&kp N2 				&kp N1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht CARET GRAVE
+			&kp N0 				&kp N6				&kp N5				&kp N4				&kp DOT 										&ht RBKT LBKT 				&ht RPAR LPAR			&ht RBRC LBRC  			&ht GT LT 				&ht PIPE DQT 
+			&kp BACKSLASH		&kp N3				&kp N2 				&kp N1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht GRAVE CARET
 															&trans					&trans 					&trans   										&trans 						&trans					&trans
                         >;
 					};
 				
                 extend_layer {
 //  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		TAB	 	|			Home	    |	  		Up	     	|	 		End		  	|		    Delete		  				    				Volume-Down	  |			  	Volume-Up 	|		  	Mute  	  	|		    Darken		|  	   		Brighten
+//      		Tab 		|			Home	    |	  		Up	     	|	 		End		  	|		    Delete		  				    				Volume-Down	  |			  	Volume-Up 	|		  	Mute  	  	|		    Darken		|  	   		Brighten
 //   			Enter		|   		Left   		|	  		Down   	  	| 			Right		|    		Backspace										Pevious-M	  |  			Rewind		|  			Play/Puase  |   		Fast		|			Next
-//   				 	|	  		Back  		|  			Esc    		|			Forward    	|			Menu   											BlueC  		  |				Blue1  		|			Blue2	  	| 			Blue3		|	   		Caps_Lock
+//   					 	|	  		Back  		|  			Esc    		|			Forward    	|			Menu   											BlueC  		  |				Blue1  		|			Blue2	  	| 			Blue3		|	   		Caps_Lock
 //													|	    	NumPadSym	|     		Space Extend|			Shift											Ctrl  		  |     		GUI   		|     		Alt   		|
 
                         bindings = <
-			&kp TAB				&kp HOME					&kp UP					&kp END					&kp DELETE 									&kp K_VOL_DN				&kp C_VOL_UP			&kp C_MUTE 				&kp C_BRI_DN			&kp C_BRI_UP   	
-			&kp ENTER			&kp LEFT					&kp DOWN 				&kp RIGHT				&kp BACKSPACE								&kp C_PREVIOUS				&kp C_REWIND			&kp C_PLAY_PAUSE      	&kp C_FAST_FORWARD   	&kp C_NEXT
-			&none				&kp K_BACK					&kp ESC					&kp K_FORWARD			&kp K_APPLICATION							&bt BT_CLR					&bt BT_SEL 1			&bt BT_SEL 2   			&bt BT_SEL 3			&kp CAPS
+			&ht ESC TAB				&kp HOME					&kp UP					&kp END					&kp DELETE 									&kp C_VOL_DN				&kp C_VOL_UP			&kp C_MUTE 				&kp C_BRI_DN			&kp C_BRI_UP   	
+			&kp ENTER				&kp LEFT					&kp DOWN 				&kp RIGHT				&kp BACKSPACE								&mo 3 						&kp C_PREVIOUS			&kp C_PLAY_PAUSE      	&kp C_NEXT			  	&kp RCTRL
+			&kp LC(Z)				&kp LC(X)					&kp LC(C)				&kp LC(V)				&kp K_APPLICATION							&bt BT_CLR					&bt BT_SEL 1			&bt BT_SEL 2   			&bt BT_SEL 3			&kp CAPS
 																&trans					&trans 					&trans   									&trans 						&trans					&trans
                         >;
 					};
+				
+				function_layer {
+//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//      	&none 			|						|	  			     	|	 				  	|		    		  				    								|			  	 	|		  	  	  	|		    |  	   		Brighten
+//   		&none			|   			   		|	  			   	  	| 						|    																  	|  					|  			  |   	|			
+//   		&trans		 	|	  			  		|  			    		|				    	|			   												  		  	|			  		|				  	| 			Blue3		|	   		Caps_Lock
+//													|	    	NumPadSym	|     		Space 		|			Shift											CTRL    	|     		GUI   		|     		Alt   		|
+
+                        bindings = <
+			&kp	F10					&kp F9						&kp F8					&kp F7					&bootloader 								&kp C_POWER					&kp C_SLEEP				&kp C_AL_LOGOFF 		&kp C_AL_LOCK			&kp LC(LA(DELETE))   	
+			&kp	F11					&kp F6						&kp F5 					&kp F4					&reset										&trans 						&none					&none      				&none				  	&none
+			&kp	F12					&kp F3						&kp F2					&kp F1					&kp K_APPLICATION							&none						&none      				&none				  	&none					&none
+																&trans					&trans 					&trans   									&trans 						&trans					&trans
+                        >;
+					};
+
 			};
 };
