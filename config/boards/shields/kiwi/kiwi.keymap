@@ -39,7 +39,7 @@
 			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
 			&kp A 					&kp R					&kp S 					&kp T 					&kp D   										&kp H						&kp N					&kp E      				&kp I   				&kp O
 			&kp Z					&kp X					&kp C 					&kp V					&kp TAB   										&kp B						&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
-															&mo 1					&mo 2				&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
+															&mo 1					&mt 2 SPACE				&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
                         >;
 					};
 				
@@ -52,9 +52,9 @@
 //													|	    	NumPadSym	|     		Space Extend|			Shift   										Ctrl		  |     		GUI			|     		Alt  		|
 
                         bindings = <
-			&ht F12 STAR 			&ht F9 9				&ht F8 8				&ht F7 7				&kp PLUS										&kp EXCLAMATION				&kp AT  				&kp HASH   				&kp DOLLAR				&kp SEMI   	
-			&ht F11 0 				&ht F6 8				&ht F5 5				&ht F5 4				&kp DOT 										&ht LBKT RBKT				&ht LPAR RPAR			&ht LBRC RBRC  			&ht LT GT				&ht DQT PIPE 
-			&ht F12 BACKSLASH		&ht F3 7				&ht F2 2 				&ht F1 1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht CARET GRAVE
+			&ht F12 STAR 			&ht F9 N9				&ht F8 N8				&ht F7 N7				&kp PLUS										&kp EXCLAMATION				&kp AT  				&kp HASH   				&kp DOLLAR				&kp SEMI   	
+			&ht F11 0 				&ht F6 N8				&ht F5 N5				&ht F5 N4				&kp DOT 										&ht LBKT RBKT				&ht LPAR RPAR			&ht LBRC RBRC  			&ht LT GT				&ht DQT PIPE 
+			&ht F12 BACKSLASH		&ht F3 N7				&ht F2 N2 				&ht F1 N1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht CARET GRAVE
 															&trans					&trans 					&trans   										&trans 						&trans					&trans
                         >;
 					};
