@@ -23,7 +23,17 @@
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-        };
+        };	
+	
+	hl: balance_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCE_TAP_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        }
 		
     };
         keymap {
@@ -39,8 +49,8 @@
                         bindings = <
 			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
 			&kp A 					&kp R					&kp S 					&kp T 					&kp D   										&kp H						&kp N					&kp E      				&kp I   				&kp O
-			&kp Z					&kp X					&kp C 					&kp V					&kp B   										&kp LGUI					&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
-															&mo 1					&mo 2					&kp LCTRL    								&kp LSHIFT 				&kp SPACE			&kp LALT
+			&kp Z					&kp X					&kp C 					&kp V					&kp B   										&none				&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
+															&mo 1					&mo 2					&kp LCTRL    								&kp LSHIFT 				&hl LGUI SPACE			&kp LALT
                         >;
 					};
 				
