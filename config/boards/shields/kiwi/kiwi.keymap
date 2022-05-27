@@ -61,15 +61,15 @@
 				
                 extend_layer {
 //  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		Page_Up 	|			Home	    |	  		Up	     	|	 		End		  	|		    Delete		  				    				Volume-Down	  |			  	Volume-Up 	|		  	Mute  	  	|		    Darken		|  	   		Brighten
-//   			Enter Tab	|   		Left   		|	  		Down   	  	| 			Right		|    		Backspace										Pevious-M	  |  			Rewind		|  			Play/Puase  |   		Fast		|			Next
-//   			Page_Down 	|	  		Back  		|  			Esc    		|			Forward    	|			Menu   											BlueC  		  |				Blue1  		|			Blue2	  	| 			Blue3		|	   		Caps_Lock
+//      		TAB	 	|			Home	    |	  		Up	     	|	 		End		  	|		    Delete		  				    				Volume-Down	  |			  	Volume-Up 	|		  	Mute  	  	|		    Darken		|  	   		Brighten
+//   			Enter		|   		Left   		|	  		Down   	  	| 			Right		|    		Backspace										Pevious-M	  |  			Rewind		|  			Play/Puase  |   		Fast		|			Next
+//   				 	|	  		Back  		|  			Esc    		|			Forward    	|			Menu   											BlueC  		  |				Blue1  		|			Blue2	  	| 			Blue3		|	   		Caps_Lock
 //													|	    	NumPadSym	|     		Space Extend|			Shift											Ctrl  		  |     		GUI   		|     		Alt   		|
 
                         bindings = <
-			&kp PG_UP				&kp HOME					&kp UP					&kp END					&kp DELETE 									&kp K_VOL_DN				&kp C_VOL_UP			&kp C_MUTE 				&kp C_BRI_DN			&kp C_BRI_UP   	
-			&ht TAB ENTER			&kp LEFT					&kp DOWN 				&kp RIGHT				&kp BACKSPACE								&kp C_PREVIOUS				&kp C_REWIND			&kp C_PLAY_PAUSE      	&kp C_FAST_FORWARD   	&kp C_NEXT
-			&kp PG_DN				&kp K_BACK					&kp ESC					&kp K_FORWARD			&kp K_APPLICATION							&bt BT_CLR					&bt BT_SEL 1			&bt BT_SEL 2   			&bt BT_SEL 3			&kp CAPS
+			&kp TAB				&kp HOME					&kp UP					&kp END					&kp DELETE 									&kp K_VOL_DN				&kp C_VOL_UP			&kp C_MUTE 				&kp C_BRI_DN			&kp C_BRI_UP   	
+			&kp ENTER			&kp LEFT					&kp DOWN 				&kp RIGHT				&kp BACKSPACE								&kp C_PREVIOUS				&kp C_REWIND			&kp C_PLAY_PAUSE      	&kp C_FAST_FORWARD   	&kp C_NEXT
+			&none				&kp K_BACK					&kp ESC					&kp K_FORWARD			&kp K_APPLICATION							&bt BT_CLR					&bt BT_SEL 1			&bt BT_SEL 2   			&bt BT_SEL 3			&kp CAPS
 																&trans					&trans 					&trans   									&trans 						&trans					&trans
                         >;
 					};
