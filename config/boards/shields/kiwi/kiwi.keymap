@@ -13,6 +13,17 @@
 #define EXTEND   	2
 
 / {
+    behaviors {
+        ht: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
         keymap {
                 compatible = "zmk,keymap";			
 				
@@ -27,7 +38,7 @@
 			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
 			&kp A 					&kp R					&kp S 					&kp T 					&kp D   										&kp H						&kp N					&kp E      				&kp I   				&kp O
 			&kp Z					&kp X					&kp C 					&kp V					&kp TAB   										&kp B						&kp K					&kp M 	   				&ht COMMA APOS			&ht DOT QUESTION
-															&mo 1					&lt 2 SPACE				&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
+															&mo 1					&ht 2 SPACE				&kp LSHFT   									&kp LCTRL 					&kp LGUI				&kp RALT
                         >;
 					};
 				
