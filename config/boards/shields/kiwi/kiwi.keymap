@@ -33,7 +33,7 @@
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
-        }
+        };
 		
     };
         keymap {
