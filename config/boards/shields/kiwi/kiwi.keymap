@@ -95,7 +95,7 @@
 						bindings = <
 			&kp DELETE				&kp HOME					&kp UP					&kp END					&kp TAB											&none						&none					&none					&none					&none		
 			&kp BACKSPACE			&kp LEFT					&kp DOWN				&kp RIGHT				&kp K_APPLICATION								&caps_word					&kp RCTRL				&kp RSHIFT				&kp RGUI				&kp RCTRL
-			&kp none				&none						&none					&none					&none											&none						&none					&none					&none				&none
+			&none				&none						&none					&none					&none											&none						&none					&none					&none				&none
 																&trans					&trans					&trans											&kp ENTER					&trans					&trans
 						>;
 					};
@@ -110,7 +110,7 @@
 						bindings = <
 			&none					&none					&none						&none					&none											&kp TAB						&kp HOME				&kp UP					&kp END				&kp DELETE		
 			&kp LALT				&kp LGUI				&kp LSHIFT					&kp RCTRL				&none											&kp K_APPLICATION			&kp LEFT				&kp DOWN				&kp RIGHT			&kp BACKSPACE	
-			&none					&none					&kp none					&kp none				&none											&none						&none					&none					&none				&kp none		
+			&none					&none					&none					&kp none				&none											&none						&none					&none					&none				&none		
 															&trans						&trans					&kp ENTER										&trans						&trans					&trans
 						>;
 					};
