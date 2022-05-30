@@ -8,126 +8,126 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT 	0
-#define NUMPADSYM   1
+#define DEFAULT		0
+#define NUMPADSYM	1
 #define NAV_LEFT	2
 #define NAV_RIGHT	3
 #define FUNCTION	4
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+	continue-list = <UNDERSCORE MINUS>;
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <2 3>;
-            then-layer = <1>;
-        };
-    };
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		tri_layer {
+			if-layers = <2 3>;
+			then-layer = <1>;
+		};
+	};
 };
 
 / {
-    behaviors {
-        ht: balance_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BALANCE_TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
+	behaviors {
+		ht: balance_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "BALANCE_TAP";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;	// <---[[moderate duration]]
+			quick-tap-ms = <0>;
+			flavor = "balanced";
+			bindings = <&kp>, <&kp>;
+		};
 		
 		hl: balanced_tap_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BALANCE_TAP_LAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&mo>, <&kp>;
-        };
-    };
-        keymap {
-                compatible = "zmk,keymap";			
-                default_layer
+			compatible = "zmk,behavior-hold-tap";
+			label = "BALANCE_TAP_LAYER";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;	// <---[[moderate duration]]
+			quick-tap-ms = <0>;
+			flavor = "balanced";
+			bindings = <&mo>, <&kp>;
+		};
+	};
+		keymap {
+				compatible = "zmk,keymap";			
+				default_layer
 				{
-//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		Q  			|			W		    |	  		F	     	|	 		P		  	|		    G	  						    				J		  	  |			  	L 		    |		  	U  	  		|		    Y			|  	   		; 
-//   			A  	  		|   		R     		|	  		S   	  	| 			T  			|    		D	  											H  	  		  |  			N     		|  			E  	  		|		    I 			|  	   		O 
-//   			Z  	  		|	  		X  	  		|  			C     		|			V     		|			SPACE     										B  	  		  |				K	  		|  			M	  		| 			,/'		 	|	   		./?	
-//													|	    	NumPadSym	|     		Extend		|			Shift   										Ctrl  		  |     		GUI   		|     		Alt   		|
+//	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//				Q			|			W			|			F			|			P			|			G												J			  |				L			|			U			|			Y			|			; 
+//				A			|			R			|			S			|			T			|			D												H			  |				N			|			E			|			I			|			O 
+//				Z			|			X			|			C			|			V			|			SPACE											B			  |				K			|			M			|			,/'			|			./?	
+//													|			NumPadSym	|			Extend		|			Shift											Ctrl		  |				GUI			|			Alt			|
 
-                        bindings = <
-			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
-			&mt LALT A 				&mt LGUI R				&mt LSHIFT S 			&mt LCTRL T 			&kp D   										&kp H						&mt RCTRL N				&mt RSHIFT E      		&mt RGUI I   			&mt RALT O
-			&kp Z					&kp X					&kp C 					&kp V					&kp B	  										&mt 4 ESC					&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
-															&none					&none					&hl 2 SPACE   									&hl 3 SPACE 				&none 					&none
-                        >;
+						bindings = <
+			&kp Q					&kp W					&kp F					&kp P					&kp G											&kp J						&kp L					&kp U					&kp Y					&kp SEMI	
+			&mt LALT A				&mt LGUI R				&mt LSHIFT S			&mt LCTRL T				&kp D											&kp H						&mt RCTRL N				&mt RSHIFT E			&mt RGUI I				&mt RALT O
+			&kp Z					&kp X					&kp C					&kp V					&kp B											&mt 4 ESC					&kp K					&kp M					&ht APOS COMMA			&ht QUESTION DOT
+															&none					&none					&hl 2 SPACE										&hl 3 SPACE					&none					&none
+						>;
 					};
 				
 				
-                numpadsym_layer {
-//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		* f10  		|			9 f		    |	  		8 f	     	|	 		7 f		  	|		    +	  						    				!		  	  |			  	@ 		    |		  	#  	  		|		    $			|  	   		% 
-//   			0 f11 	  	|   		6 f   		|	  		5 f   	  	| 			4 f			|    		.	  											[ ]	  		  |  			( )    		|  			{ }	  		|		    < >			|  	   		" | 
-//   			/ f12 	  	|	  		3 f	  		|  			2 f    		|			1 f    		|			- ~	     										= 	  		  |				\	  		|  			_	  		| 			&		 	|	   		^ `	
-//													|	    	NumPadSym	|     		Space Extend|			Shift   										Ctrl		  |     		GUI			|     		Alt  		|
+				numpadsym_layer {
+//	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//				* f10		|			9 f			|			8 f			|			7 f			|			+												!			  |				@			|			#			|			$			|			% 
+//				0 f11		|			6 f			|			5 f			|			4 f			|			.												[ ]			  |				( )			|			{ }			|			< >			|			" | 
+//				/ f12		|			3 f			|			2 f			|			1 f			|			- ~												=			  |				\			|			_			|			&			|			^ `	
+//													|			NumPadSym	|			Space Extend|			Shift											Ctrl		  |				GUI			|			Alt			|
 
-                        bindings = <
-			&kp STAR 			&kp N9				&kp N8				&kp N7				&kp PLUS										&kp EXCLAMATION				&kp AT  				&kp HASH   				&kp DOLLAR				&kp SEMI   	
-			&kp N0 				&kp N6				&kp N5				&kp N4				&kp DOT 										&ht RBKT LBKT 				&ht RPAR LPAR			&ht RBRC LBRC  			&ht GT LT 				&ht PIPE DQT 
-			&kp BACKSLASH		&kp N3				&kp N2 				&kp N1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER	   			&kp AMPS				&ht GRAVE CARET
-															&trans					&trans 					&kp trans  										&trans 						&trans					&trans
+						bindings = <
+			&kp STAR			&kp N9				&kp N8				&kp N7				&kp PLUS										&kp EXCLAMATION				&kp AT					&kp HASH				&kp DOLLAR				&kp SEMI	
+			&kp N0				&kp N6				&kp N5				&kp N4				&kp DOT											&ht RBKT LBKT				&ht RPAR LPAR			&ht RBRC LBRC			&ht GT LT				&ht PIPE DQT 
+			&kp BACKSLASH		&kp N3				&kp N2				&kp N1				&ht TILDE MINUS									&kp EQUAL					&kp FSLH				&kp UNDER				&kp AMPS				&ht GRAVE CARET
+															&trans					&trans					&kp trans										&trans						&trans					&trans
 			
-                        >;
+						>;
 					};
 				
-                nav_left_layer {
-//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		Tab 		|			Home	    |	  		Up	     	|	 		End		  	|		    Delete		  				    				Volume-Down	  |			  	Volume-Up 	|		  	Mute  	  	|		    Darken		|  	   		Brighten
-//   			Enter		|   		Left   		|	  		Down   	  	| 			Right		|    		Backspace										Pevious-M	  |  			Rewind		|  			Play/Puase  |   		Fast		|			Next
-//   					 	|	  		Back  		|  			Esc    		|			Forward    	|			Menu   											BlueC  		  |				Blue1  		|			Blue2	  	| 			Blue3		|	   		Caps_Lock
-//													|	    	NumPadSym	|     		Space Extend|			Shift											Ctrl  		  |     		GUI   		|     		Alt   		|
+				nav_left_layer {
+//	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//				Tab			|			Home		|			Up			|			End			|			Delete											Volume-Down	  |				Volume-Up	|			Mute		|			Darken		|			Brighten
+//				Enter		|			Left		|			Down		|			Right		|			Backspace										Pevious-M	  |				Rewind		|			Play/Puase	|			Fast		|			Next
+//							|			Back		|			Esc			|			Forward		|			Menu											BlueC		  |				Blue1		|			Blue2		|			Blue3		|			Caps_Lock
+//													|			NumPadSym	|			Space Extend|			Shift											Ctrl		  |				GUI			|			Alt			|
 
-                        bindings = <
-			&kp DELETE				&kp HOME					&kp UP					&kp END					&kp TAB 										&none						&none					&none 					&none					&none   	
-			&kp BACKSPACE			&kp LEFT					&kp DOWN 				&kp RIGHT				&kp K_APPLICATION								&						&kp RCTRL				&kp RSHIFT      		&kp RGUI 			  	&kp RCTRL
-			&kp none				&none						&none					&none					&none											&none						&none					&none	    			&kp none				&none
-																&trans					&trans 					&trans   										&kp ENTER 					&trans					&trans
-                        >;
+						bindings = <
+			&kp DELETE				&kp HOME					&kp UP					&kp END					&kp TAB											&none						&none					&none					&none					&none		
+			&kp BACKSPACE			&kp LEFT					&kp DOWN				&kp RIGHT				&kp K_APPLICATION								&						&kp RCTRL				&kp RSHIFT				&kp RGUI				&kp RCTRL
+			&kp none				&none						&none					&none					&none											&none						&none					&none					&kp none				&none
+																&trans					&trans					&trans											&kp ENTER					&trans					&trans
+						>;
 					};
-                
+				
 				nav_right_layer {
-//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		Tab 		|			Home	    |	  		Up	     	|	 		End		  	|		    Delete		  				    				Volume-Down	  |			  	Volume-Up 	|		  	Mute  	  	|		    Darken		|  	   		Brighten
-//   			Enter		|   		Left   		|	  		Down   	  	| 			Right		|    		Backspace										Pevious-M	  |  			Rewind		|  			Play/Puase  |   		Fast		|			Next
-//   					 	|	  		Back  		|  			Esc    		|			Forward    	|			Menu   											BlueC  		  |				Blue1  		|			Blue2	  	| 			Blue3		|	   		Caps_Lock
-//													|	    	NumPadSym	|     		Space Extend|			Shift											Ctrl  		  |     		GUI   		|     		Alt   		|
+//	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//				Tab			|			Home		|			Up			|			End			|			Delete											Volume-Down	  |				Volume-Up	|			Mute		|			Darken		|			Brighten
+//				Enter		|			Left		|			Down		|			Right		|			Backspace										Pevious-M	  |				Rewind		|			Play/Puase	|			Fast		|			Next
+//							|			Back		|			Esc			|			Forward		|			Menu											BlueC		  |				Blue1		|			Blue2		|			Blue3		|			Caps_Lock
+//													|			NumPadSym	|			Space Extend|			Shift											Ctrl		  |				GUI			|			Alt			|
 
-                        bindings = <
-			&none					&none 					&none						&none					&none											&kp TAB 					&kp HOME				&kp UP	 				&kp END				&kp DELETE		
-			&kp LALT				&kp LGUI      			&kp LSHIFT 					&kp RCTRL 				&none											&kp K_APPLICATION		  	&kp LEFT				&kp DOWN 				&kp RIGHT			&kp BACKSPACE	
-			&none					&none	    			&kp none					&kp none				&none											&none						&none					&none	 				&none				&kp none		
-															&trans						&trans 					&kp ENTER   									&trans 						&trans					&trans
-                        >;
+						bindings = <
+			&none					&none					&none						&none					&none											&kp TAB						&kp HOME				&kp UP					&kp END				&kp DELETE		
+			&kp LALT				&kp LGUI				&kp LSHIFT					&kp RCTRL				&none											&kp K_APPLICATION			&kp LEFT				&kp DOWN				&kp RIGHT			&kp BACKSPACE	
+			&none					&none					&kp none					&kp none				&none											&none						&none					&none					&none				&kp none		
+															&trans						&trans					&kp ENTER										&trans						&trans					&trans
+						>;
 					};
 				
 				function_layer {
-//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      	&none 			|						|	  			     	|	 				  	|		    		  				    								|			  	 	|		  	  	  	|		    |  	   		Brighten
-//   		&none			|   			   		|	  			   	  	| 						|    																  	|  					|  			  |   	|			
-//   		&trans		 	|	  			  		|  			    		|				    	|			   												  		  	|			  		|				  	| 			Blue3		|	   		Caps_Lock
-//													|	    	NumPadSym	|     		Space 		|			Shift											CTRL    	|     		GUI   		|     		Alt   		|
+//	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//			&none			|						|						|						|																		|					|					|			|			Brighten
+//			&none			|						|						|						|																		|					|			  |		|			
+//			&trans			|						|						|						|																		|					|					|			Blue3		|			Caps_Lock
+//													|			NumPadSym	|			Space		|			Shift											CTRL		|			GUI			|			Alt			|
 
-                        bindings = <
-			&kp	F10					&kp F9						&kp F8					&kp F7					&bootloader 								&kp C_POWER					&kp C_SLEEP				&kp C_AL_LOGOFF 		&kp C_AL_LOCK			&kp LC(LA(DELETE))   	
-			&kp	F11					&kp F6						&kp F5 					&kp F4					&reset										&reset 						&none					&none      				&none				  	&none
-			&kp	F12					&kp F3						&kp F2					&kp F1					&none										&trans						&none      				&none				  	&none					&none
-																&trans					&trans 					&trans   									&trans 						&trans					&trans
-                        >;
+						bindings = <
+			&kp	F10					&kp F9						&kp F8					&kp F7					&bootloader									&kp C_POWER					&kp C_SLEEP				&kp C_AL_LOGOFF			&kp C_AL_LOCK			&kp LC(LA(DELETE))		
+			&kp	F11					&kp F6						&kp F5					&kp F4					&reset										&reset						&none					&none					&none					&none
+			&kp	F12					&kp F3						&kp F2					&kp F1					&none										&trans						&none					&none					&none					&none
+																&trans					&trans					&trans										&trans						&trans					&trans
+						>;
 					};
 
 			};
