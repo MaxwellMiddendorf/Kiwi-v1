@@ -64,7 +64,7 @@
 			&kp Q					&kp W					&kp F					&kp P					&kp G											&kp J						&kp L					&kp U					&kp Y					&kp SEMI	
 			&mt LALT A				&mt LGUI R				&mt LSHIFT S			&mt LCTRL T				&kp D											&kp H						&mt RCTRL N				&mt RSHIFT E			&mt RGUI I				&mt RALT O
 			&kp Z					&kp X					&kp C					&kp V					&kp B											&mt 4 ESC					&kp K					&kp M					&ht APOS COMMA			&ht QUESTION DOT
-															&none					&none					&hl 2 SPACE										&hl 3 SPACE					&none					&none
+															&hl 2 SPACE					&none					&none										&none					&none					&hl 3 SPACE
 						>;
 					};
 				
@@ -95,8 +95,8 @@
 						bindings = <
 			&kp DELETE				&kp HOME					&kp UP					&kp END					&kp TAB											&none						&none					&none					&none					&none		
 			&kp BACKSPACE			&kp LEFT					&kp DOWN				&kp RIGHT				&kp K_APPLICATION								&caps_word					&kp RCTRL				&kp RSHIFT				&kp RGUI				&kp RCTRL
-			&none				&none						&none					&none					&none											&none						&none					&none					&none				&none
-																&trans					&trans					&trans											&kp ENTER					&trans					&trans
+			&none				&none						&none					&kp ENTER					&none											&none						&none					&none					&none				&none
+																&trans					&trans					&trans											&trans					&trans					&trans
 						>;
 					};
 				
@@ -110,8 +110,8 @@
 						bindings = <
 			&none					&none					&none						&none					&none											&kp TAB						&kp HOME				&kp UP					&kp END				&kp DELETE		
 			&kp LALT				&kp LGUI				&kp LSHIFT					&kp RCTRL				&none											&kp K_APPLICATION			&kp LEFT				&kp DOWN				&kp RIGHT			&kp BACKSPACE	
-			&none					&none					&none					&none				&none											&none						&none					&none					&none				&none		
-															&trans						&trans					&kp ENTER										&trans						&trans					&trans
+			&none					&none					&none					&none				&none											&none						&kp ENTER					&none					&none				&none		
+															&trans						&trans					&trans										&trans						&trans					&trans
 						>;
 					};
 				
