@@ -116,8 +116,8 @@
 //													|	    				|     		C			|			V   										N 	 		  |     		M   		|     		 	  		|
 
                         bindings = <
-			&kp Q					&kp W					&kp E					&kp R 					&kp T   										&kp Y						&kp U  					&kp I  	   				&kp Y					&kp P   	
-			&kp A 					&kp S					&kp D 					&kp F 					&kp	G   										&kp H						&kp J					&kp K      				&kp I   				&kp SEMI
+			&kp Q					&kp W					&kp E					&kp R 					&kp T   										&kp Y						&kp U  					&kp I  	   				&kp O					&kp P   	
+			&kp A 					&kp S					&kp D 					&kp F 					&kp	G   										&kp H						&kp J					&kp K      				&kp Y   				&kp SEMI
 			&none					&none					&none 					&none					&none	  										&none						&none					&none 	   				&ht APOS COMMA			&none
 															&none					&kp C					&kp V    										&kp N 						&kp M					&mo 3
                         >;
