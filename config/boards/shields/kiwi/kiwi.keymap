@@ -12,10 +12,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 	0
-#define NUMPADSYM   1
-#define EXTEND   	2
-#define FUNCTION	3
-#define STENO		4
+#define STENO		1
+#define NUMPADSYM  	2
+#define EXTEND   	3
+#define FUNCTION	4
+
 
 &caps_word {
 	continue-list = <UNDERSCORE MINUS>;
@@ -65,7 +66,21 @@
 			&kp Q					&kp W					&kp F					&kp P 					&kp G   										&kp J						&kp L  					&kp U  	   				&kp Y					&kp SEMI   	
 			&kp A 					&kp R					&kp S 					&kp T 					&kp D   										&kp H						&kp N					&kp E      				&kp I   				&kp O
 			&kp Z					&kp X					&kp C 					&kp V					&kp B	  										&kp LGUI					&kp K					&kp M 	   				&ht APOS COMMA			&ht QUESTION DOT
-															&mo 1					&mo 2					&kp LCTRL    									&kp LSHIFT 					&kp SPACE				&kp LALT
+															&mo 2					&mo 3					&kp LCTRL    									&kp LSHIFT 					&kp SPACE				&kp LALT
+                        >;
+					};
+		Steno_layer {
+//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//      		Q  			|			W		    |	  		E	     	|	 		R		  	|		    T	  						    			Y		  	  |			  	U 		    |		  	I  	  		|		    O			|  	   		P
+//   			A  	  		|   		S     		|	  		D   	  	| 			F  			|    		G	  										H  	  		  |  			J     		|  			K  	  		|		    L			|  	   		; 
+//   			  	  		|	  		  	  		|  			     		|			     		|			     										  	  		  |					  		|  				  		| 					 	|	   			
+//													|	    				|     		C			|			V   										N 	 		  |     		M   		|     		 	  		|
+
+                        bindings = <
+			&kp Q					&kp W					&kp E					&kp R 					&kp T   										&kp U						&kp I  					&kp O  	   				&kp P					&kp LBKT	
+			&kp A 					&kp S					&kp D 					&kp F 					&kp	G   										&kp J						&kp K					&kp L      				&kp SEMI   				&kp APOS
+			&none					&none					&none 					&none					&none	  										&none						&none					&none 	   				&none					&none
+															&none					&kp C					&kp V    										&kp N 						&kp M					&long 1 SPACE
                         >;
 					};
 				
@@ -94,7 +109,7 @@
 
                         bindings = <
 			&ht ESC TAB				&kp HOME					&kp UP					&kp END					&kp DELETE 									&kp C_VOL_DN				&kp C_VOL_UP			&kp C_MUTE 				&kp C_BRI_DN			&kp C_BRI_UP   	
-			&kp ENTER				&kp LEFT					&kp DOWN 				&kp RIGHT				&kp BACKSPACE								&mo 3 						&kp C_PREVIOUS			&kp C_PLAY_PAUSE      	&kp C_NEXT			  	&kp RCTRL
+			&kp ENTER				&kp LEFT					&kp DOWN 				&kp RIGHT				&kp BACKSPACE								&mo 4 						&kp C_PREVIOUS			&kp C_PLAY_PAUSE      	&kp C_NEXT			  	&kp RCTRL
 			&kp LC(Z)				&kp LC(X)					&kp LC(C)				&kp LC(V)				&kp K_APPLICATION							&none						&none					&none 	   				&none					&caps_word
 																&trans					&trans 					&trans   									&trans 						&trans					&trans
                         >;
@@ -109,27 +124,14 @@
 
                         bindings = <
 			&kp	F10					&kp F9						&kp F8					&kp F7					&bootloader 								&kp C_POWER					&kp C_SLEEP				&kp C_AL_LOGOFF 		&kp C_AL_LOCK			&kp LC(LA(DELETE))   	
-			&kp	F11					&kp F6						&kp F5 					&kp F4					&reset										&trans 						&tog 4					&none      				&none				  	&kp CAPS
+			&kp	F11					&kp F6						&kp F5 					&kp F4					&reset										&trans 						&tog 1					&none      				&none				  	&kp CAPS
 			&kp	F12					&kp F3						&kp F2					&kp F1					&kp K_APPLICATION							&bt BT_CLR					&bt BT_SEL 1			&bt BT_SEL 2   			&bt BT_SEL 3					&none
 																&trans					&trans 					&trans   									&trans 						&trans					&trans
                         >;
 					};
 				
 				
-				Steno_layer {
-//  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//      		Q  			|			W		    |	  		E	     	|	 		R		  	|		    T	  						    			Y		  	  |			  	U 		    |		  	I  	  		|		    O			|  	   		P
-//   			A  	  		|   		S     		|	  		D   	  	| 			F  			|    		G	  										H  	  		  |  			J     		|  			K  	  		|		    L			|  	   		; 
-//   			  	  		|	  		  	  		|  			     		|			     		|			     										  	  		  |					  		|  				  		| 					 	|	   			
-//													|	    				|     		C			|			V   										N 	 		  |     		M   		|     		 	  		|
 
-                        bindings = <
-			&kp Q					&kp W					&kp E					&kp R 					&kp T   										&kp U						&kp I  					&kp O  	   				&kp P					&kp LBKT	
-			&kp A 					&kp S					&kp D 					&kp F 					&kp	G   										&kp J						&kp K					&kp L      				&kp SEMI   				&kp APOS
-			&none					&none					&none 					&none					&none	  										&none						&none					&none 	   				&none					&none
-															&none					&kp C					&kp V    										&kp N 						&kp M					&long 4 SPACE
-                        >;
-					};
 
 
 			};
