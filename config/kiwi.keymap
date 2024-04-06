@@ -132,7 +132,7 @@
 
                         bindings = <
           &kp F10                  &kp F9                      &kp F8                  &kp F7                &bootloader                                    &trans                      &kp C_SLEEP             &kp C_AL_LOGOFF         &kp C_AL_LOCK           &kp LC(LA(DELETE))
-          &kp F11                  &kp F6                      &kp F5                  &kp F4                &reset                                         &tog 1                      &trans                  &none                   &none                   &kp CAPS
+          &kp F11                  &kp F6                      &kp F5                  &kp F4                &none                                          &tog 1                      &trans                  &none                   &none                   &kp CAPS
           &kp F12                  &kp F3                      &kp F2                  &kp F1                &kp K_APPLICATION                              &bt BT_CLR                  &bt BT_SEL 1            &bt BT_SEL 2            &bt BT_SEL 3            &none
                                                                &trans                  &trans                &trans                                         &trans                      &trans     			    &trans
                         >;
